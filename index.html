@@ -11,192 +11,7 @@
 	<link rel="icon" href="favicon.ico">
     <title>eAntenatalCare</title>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<style>
-		body{ 
-		margin: 0;
-		font-family: verdana;
-		background-color:#eeeeee;		
-		}
-		.left{
-			float: left;
-			margin: 0;
-			padding: 0;
-		}
-		.right{
-			float: right;
-			margin: 0;
-			padding: 0;
-		}
-		.navbar{
-			top: 0;
-			width : 100%;
-			height: 50px;
-			background-color: #232323;
-			margin-right: 50px;
-			position: fixed;
-			z-index: 1;
-		}
-		.title{
-			padding-top: 20px;
-			color: #ffffff;
-			font-family: sanserif;
-			font-size: 32px;
-			font-weight: bold;
-		}
-		.nav-container{ 
-			width: 80%;			
-			margin: 0 auto; 
-			position: relative;
-			overflow: auto;
-		}
-        .container{ 
-			width: 80%;
-			top: 70px;			
-			margin: 20px auto; 
-			position: relative;
-			overflow: auto;
-		}
-		.form-control{
-			width: 100%;
-			height: 30px;
-			border-radius: 5px;
-			border: 1px solid #d0d0d0;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			font-size: 18px;
-			padding-left: 5px;
-		}
-        .text-area{
-            margin: 15px;
-            height: 250px;
-        }
-		.header{
-			background-color: #232323;
-			width: 100%;
-			height: 25px;
-			margin: 0;
-			color: #dddddd;
-			text-align: center;
-			padding-top: 5px;
-		}
-		.menu{
-			margin-top: 15px;
-			list-style-type: none;
-			float: right;
-		}
-		.menu li{
-			display:inline;
-            margin-left: 15px;;
-		}
-		label{
-			width: 100%;
-			margin-top: 15px;
-		}
-		.menu li a{
-			color: #ffffff;
-			text-decoration: none;
-		}
-		.content{
-			width: 68%;
-            background-image: url('images/pregnancy-care-one.jpg');
-            background-repeat: no-repeat;
-			float: left;
-			border: 1px solid #cdcdcd;
-			border-radius: 5px;
-		}
-		.impact{
-			border: 1px solid #cdcdcd;
-			width: 30%;
-			float: right;
-			border-radius: 5px;
-		}
-		.row{
-			width: 100%;
-            display: inline-block;
-		}
-        .col{
-			width:45%;
-			float: left;
-			padding: 5px 10px;
-		}
-		.btn{
-			width: 50%;
-			background-color: #dddddd;
-			height: 35px;
-			border-radius: 7px;
-			border: 1px solid #d0d0d0;
-			font-family: verdana;
-			font-size: 20px;
-			margin: 20px 80px;
-		}
-        .btn:hover{
-            color: #000000;
-            border: 1px solid #000000;
-        }
-		.form{
-			margin: 0;
-			padding: 0;
-			display: inline;
-		}
-		.success{
-			width: 100%;
-			color: #259604;
-			background-color: #bbff99;
-			border-radius: 5px;
-			border: 1px solid #259604;
-			text-align: center;
-			display: none;
-		}
-		.error{
-			width: 100%;
-			color: #ff0000;
-			background-color: #ffbb99;
-			border-radius: 5px;
-			border: 1px solid #ff0000;
-			text-align: center;
-			display:none;
-		}
-        .content-header{
-            margin-top: 200px;
-            width: 100%;
-            text-align: center;
-            font-size: 38px;
-            font-family: 'Gill Sans', 'sans-serif';
-        }
-        .content-tagline{
-            width: 100%;
-            text-align: center;
-            font-size: 20px;
-            font-family: 'calibri';
-            margin-bottom: 30px;
-        }
-        .see-more{
-            height: 20px;
-            border-radius: 7px;
-            text-decoration: none;
-            color:darkgrey;
-            width: 150px;
-            font-size: 28px;
-            background-color: #eeeeee;
-            border: 1px solid gray;
-            padding: 0;
-        }
-        .see-more:hover{
-            background-color: darkgrey;
-            color: #eeeeee;
-        }
-        .row-content{
-            margin: 0;
-            padding: 10px;
-            font-size: 16px;
-        }
-        #content-info{
-            margin-top: 220px;
-            padding: 20px;
-            position:sticky;
-            line-height: 1.5em;
-        }
-	</style>
+	<link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
 	<!-- As a heading -->
@@ -207,8 +22,11 @@
             </div>
             <div class="right">
                 <ul class="menu">
-                    <li><a href="#">Register </a></li>
-                    <li><a href="#">Signin</a></li>
+                    <li><a class="active" href="index.html">Home </a></li>
+                    <li><a href="questionandanswer.html">Q&A </a></li>
+                    <li><a href="appointment.html">Book Appointment </a></li>
+                    <li><a href="register.html">Register </a></li>
+                    <li><a href="login.html">Signin</a></li>
                 </ul>
             </div>
         </div>
@@ -251,102 +69,19 @@ Many women have benefitted immensely from the antenatal care and assessment prog
                 <p class="row-content">Book appointment with doctors for antenatal care services
                     we would connect you with qualified and experienced doctors
                 </p>
-                <button class="btn">Click Here</button>
+                <button class="btn" id="booking" >Click Here</button>
             </div>
             <div class="row">
-                <h5 class="header">Ask free Questions</h6>
-                <textarea class="form-control text-area" placeholder="Enter your questions here e.g my belly is swollen"></textarea>
-                <button class="btn">Click Here</button>
+                <h5 class="header">Ask free Questions</h5>
+                <span class="success"></span>
+                <span class="error"></span>
+                <textarea class="form-control text-area" id="question" placeholder="Enter your questions here e.g my belly is swollen"></textarea>
+                <button class="btn" id="submit">Submit</button>
             </div>
 		</div>
 	</div>
 	<!-- <div class="row">Developed by htolajide@yahoo.com</div> -->
 	<!-- Javascript Code -->
-	<script>
-		const myElements = document.querySelectorAll('.form-control');
-		// const setValues = () => {
-			// myElements.forEach( element => {
-				// console.log(element);
-				// element.value = element.id;
-			// })
-		// };
-		const url = "https://estimate-covid19.herokuapp.com/api/v1/on-covid-19/";
-		const btn = document.querySelector('.btn');
-		const success = document.querySelector('.success');
-		const error = document.querySelector('.error');
-		
-		const numberFormat = (num) => {
-			let num_parts = num.toString().split(".");
-			num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			return num_parts.join(".");
-		};
-		const setValue = (element, value) => {
-			element.value = numberFormat(value);
-		};
-		btn.addEventListener('click', (event) => {
-			event.preventDefault();
-			const data = {
-				region: {
-					name: myElements[0].value,
-					avgAge: parseInt(myElements[1].value, 10),
-					avgDailyIncomeInUSD: parseInt(myElements[2].value, 10),
-					avgDailyIncomePopulation: parseInt(myElements[3].value, 10)
-				},
-				population: parseInt(myElements[4].value, 10),
-				reportedCases: parseInt(myElements[5].value, 10),
-				totalHospitalBeds: parseInt(myElements[6].value, 10),
-				timeToElapse: parseInt(myElements[7].value, 10),
-				periodType: myElements[8].value	
-			}
-			const parameter = {
-				method: 'post',
-				url: url,
-				data: data,
-			}
-			axios(parameter)
-			.then(mydata => { return mydata})
-			.then(myresult =>{
-				const {impact,severeImpact} = myresult.data;
-				console.log(`impact = ${JSON.stringify(impact)} and severe = ${JSON.stringify(severeImpact)}`)
-				const ici = document.querySelector('#i-ci');
-				setValue(ici, impact.currentlyInfected);
-				const sci = document.querySelector('#s-ci');
-				setValue(sci, severeImpact.currentlyInfected);
-				const iibrt = document.querySelector('#i-ibrt');
-				setValue(iibrt, impact.infectionsByRequestedTime);
-				const sibrt = document.querySelector('#s-ibrt');
-				setValue(sibrt, severeImpact.infectionsByRequestedTime);
-				const iscbrt = document.querySelector('#i-scbrt');
-				setValue(iscbrt, impact.severeCasesByRequestedTime);
-				const sscbrt = document.querySelector('#s-scbrt');
-				setValue(sscbrt, severeImpact.severeCasesByRequestedTime);
-				const ihbbrt = document.querySelector('#i-hbbrt');
-				setValue(ihbbrt, impact.hospitalBedsByRequestedTime);
-				const shbbrt = document.querySelector('#s-hbbrt');
-				setValue(shbbrt, severeImpact.hospitalBedsByRequestedTime);
-				const iicubrt = document.querySelector('#i-icubrt');
-				setValue(iicubrt, impact.casesForICUByRequestedTime);
-				const sicubrt = document.querySelector('#s-icubrt');
-				setValue(sicubrt, severeImpact.casesForICUByRequestedTime);
-				const icvbrt = document.querySelector('#i-cvbrt');
-				setValue(icvbrt, impact.casesForVentilatorsByRequestedTime);
-				const scvbrt = document.querySelector('#s-cvbrt');
-				setValue(scvbrt, severeImpact.casesForVentilatorsByRequestedTime);
-				const idif = document.querySelector('#i-dif');
-				setValue(idif, impact.dollarsInFlight);
-				const sdif = document.querySelector('#s-dif');
-				setValue(sdif, severeImpact.dollarsInFlight);
-				success.style.display = 'block'
-				success.textContent = `Request successfull\n`;
-				error.style.display = 'none';
-			})
-			.catch(err => {
-				error.style.display = 'block';
-				error.textContent = `Error occured ${err}`;
-			})
-			console.log('button clicked');
-		});
-		// setValues();
-	</script>
+	<script src="js/question.js"></script>
   </body>
 </html>

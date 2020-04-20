@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="this app is eAntinatalCare platform">
+	<meta name="keywords" content="Search, antenatal, pregnancy, clinic">
+	<meta name="author" content="Taofeek hammed">
+
+	<link rel="icon" href="favicon.ico">
+    <title>eAntenatalCare</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+	<!-- As a heading -->
+	<nav class="navbar">
+        <div class="nav-container">
+            <div class="left">
+                <span class="title">eAntenatalCare</span>
+            </div>
+            <div class="right">
+                <ul class="menu">
+                    <li><a href="index.html">Home </a></li>
+                    <li><a href="questionandanswer.html">Q&A </a></li>
+                    <li><a class="active" href="appointment.html">Book Appointment </a></li>
+                    <li><a href="register.html">Register </a></li>
+                    <li><a href="login.html">Signin</a></li>
+                </ul>
+            </div>
+        </div>
+	</nav>
+	<div class="container">
+        <form class="form">
+            <label for="formGroupExampleInput">Name:</label>
+            <input type="text" class="form-control" id="name">
+            <label for="formGroupExampleInput2">Phone Number:</label>
+            <input type="number" class="form-control" id="phone">
+            <label for="inputState">Choose Hospital:</label>
+						<select id="hospital" class="form-control" data-period-type="">
+							<option selected>FMC Ebute Meta</option>
+							<option>Luth</option>
+							<option>Lasuth</option>
+						</select>
+            <button type="submit" class="btn" data-go-estimate="">Submit</button>
+        </form>
+	</div>
+	<!-- <div class="row">Developed by htolajide@yahoo.com</div> -->
+	<!-- Javascript Code -->
+	<script src="js/question.js"></script>
+  </body>
+</html>
